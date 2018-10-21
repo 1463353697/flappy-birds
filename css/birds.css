@@ -1,0 +1,47 @@
+#content {
+	width: 343px;
+	height: 480px;
+	background: url(bg.jpg);
+	position: relative;
+	overflow: hidden;
+}
+#headcontent {
+	position: relative;
+	top: 100px;
+	left: 55px;
+}
+#head{
+	position: relative;
+	
+
+
+}
+#active_birds {
+	position: absolute;
+	left: 195px;
+	top: 30px;
+}
+#active_birds img {
+	position: absolute;
+
+}
+#start {
+	position: relative;
+	top: 200px;
+	left: 120px;
+}
+#banner {
+	position: relative;
+	top: 308px;
+	width: 1029px;
+	height: 14px;
+	/*left: -343px;*/
+	/*overflow: hidden;*/
+	
+}
+#banner img {
+	width: 343px;
+	height: 14px;
+	float: left;
+
+}
