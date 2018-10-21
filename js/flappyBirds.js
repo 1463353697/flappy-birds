@@ -87,6 +87,7 @@ window.onload = function() {
 			}
 		}
 
+		//使两只小鸟轮换出现，形成动态
 		setInterval(
 			function(){
 				moveBirds(bird1);
@@ -99,7 +100,7 @@ window.onload = function() {
 		var img = document.getElementById('head');
 		function moveImg() {
 
-			//不断改变整块的偏移量
+			//不断改变整块的偏移量，使上下移动
 			setInterval(function(){
 				if (img.style.top == "0px") {
 					img.style.top = "3px";
@@ -111,40 +112,48 @@ window.onload = function() {
 
 		moveImg();
 	}
+
 	//让画面下面那一条也动起来
-	function banner (){
-		// var bannerBlock = document.getElementById('banner');
-		// var newLeft = parseInt(bannerBlock.style.left) + 314;
-		// if (newLeft > 1029) {
-		// 	bannerBlock.style.left = 0 + 'px';
-		// }
-		function animate() {
-			var bannerBlock = document.getElementById('banner');
-			// var newLeft = parseInt(bannerBlock.style.left) ;
-			// bannerBlock.style.left = newLeft + 'px';
+	
+		
+	function animate() {
+		var bannerBlock = document.getElementById('banner');
+		//设置一个初值
+		bannerBlock.style.left = "0px";
 
-			bannerBlock.style.left = "12px";
+		//间歇调用使图片偏移量增加的函数
+		setInterval(function(){
 
-			console.log(bannerBlock.style.left);
-			if (newLeft > 1029) {
-				bannerBlock.style.left = 0 + 'px';
+			//对偏移量进行判断
+			if (parseInt(bannerBlock.style.left) < -646) {
+				bannerBlock.style.left = 0;
 			}
-		}
+			var newLeft = parseInt(bannerBlock.style.left) - 2;
+			bannerBlock.style.left = newLeft + 'px';
 
-		// setInterval(function(){
-		// 	animate();
-		// },200);
+			// console.log(bannerBlock.style.left);
+
+			// return bannerBlock.style.left;
+
+		},25);
+			 
+			
+			
 
 	}
 
-	banner();
 
 
 
+
+
+	
+				
 	words();
 
 
 	bird();
+	animate();
 	
 	
 
